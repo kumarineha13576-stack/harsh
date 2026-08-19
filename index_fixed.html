@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Something Special 💗</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:"Trebuchet MS",Arial,sans-serif;background:linear-gradient(135deg,#ffd8e8,#ffc1dc 45%,#ffe5ef);color:#9d315f;overflow-x:hidden}
+.corner{position:fixed;z-index:2;font-size:42px;filter:drop-shadow(0 4px 3px #d66b95)}.tl{top:8px;left:8px}.tr{top:8px;right:8px}.bl{bottom:8px;left:8px}.br{bottom:8px;right:8px}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:35px 65px}.card{width:min(650px,100%);padding:28px 24px 30px;text-align:center;background:#fffafaeb;border:3px solid #ff8fba;border-radius:30px;box-shadow:0 15px 40px #ac376933}
+.badge{display:inline-block;background:#ff6fa7;color:#fff;padding:7px 16px;border-radius:30px;font-weight:bold}h1{font-size:clamp(28px,7vw,46px);margin:16px 0 8px;color:#e43f7d}h2{font-size:28px;margin:10px 0;color:#df477f}p{font-size:18px;line-height:1.7}
+textarea{width:100%;min-height:180px;border:2px solid #ff9fc2;border-radius:18px;padding:15px;font:inherit;outline:none;background:#fff;color:#7d3152}
+button{border:0;border-radius:30px;padding:13px 28px;margin-top:18px;background:linear-gradient(135deg,#ff4f91,#e93473);color:white;font-size:18px;font-weight:bold;cursor:pointer;box-shadow:0 7px 16px #e9568b66}
+.hidden{display:none}.audioBox{margin-top:20px;padding:16px;background:#ffe8f1;border-radius:20px}audio{width:100%;margin-top:12px}.small{font-size:13px;color:#aa6683}.footer{margin-top:20px;color:#bd5c83}
+@media(max-width:600px){.page{padding:25px 15px}.corner{font-size:32px}.card{padding:24px 16px}p{font-size:16px}}
+</style></head>
+<body>
+<div class="corner tl">🤖💙</div><div class="corner tr">🎀💛</div><div class="corner bl">💙🐱</div><div class="corner br">🐱💛</div>
+<main class="page">
+
+<section class="card step" id="step1">
+<span class="badge">Step 1 of 3 💕</span><h1>How are you? 💗</h1>
+<p>Tell me honestly... I'm listening 🥺💞</p>
+<textarea id="answer" placeholder="Write your answer here..."></textarea>
+<button type="button" id="nextBtn">Next 💖</button><div class="footer">Made with love ✨</div>
+</section>
+
+<section class="card step hidden" id="step2">
+<span class="badge">Step 2 of 3 💕</span>
+<h2>A little something for you 💌</h2>
+<p>
+Yahan apna paragraph likho. 💗<br><br>
+Is paragraph ko tum baad mein apni marzi se edit aur bada kar sakti ho.
+</p>
+<div class="audioBox">
+<strong>🎧 Listen to this</strong>
+<audio src="audio/audio.mp3" controls preload="metadata"></audio>
+</div>
+<button type="button" onclick="openStep3()">Next 💖</button>
+</section>
+
+<section class="card step hidden" id="step3">
+<span class="badge">Step 3 of 3 💕</span>
+<h2>One more thing for you 💌</h2>
+<p>
+Yahan apna paragraph likho. 💗<br><br>
+Is page par bhi paragraph ke neeche audio rahegi. 🎧💕
+</p>
+<div class="audioBox">
+<strong>🎧 Listen to this</strong>
+<audio src="audio/audio.mp3" controls preload="metadata"></audio>
+</div>
+<p class="footer">Made with love, just for you 💗✨</p>
+</section>
+</main>
+<script>
+document.getElementById("nextBtn").addEventListener("click", function () {
+  const answer = document.getElementById("answer").value.trim();
+
+  if (answer.length === 0) {
+    alert("Pehle kuch bhi answer likho 💗");
+    document.getElementById("answer").focus();
+    return;
+  }
+
+  document.getElementById("step1").classList.add("hidden");
+  document.getElementById("step2").classList.remove("hidden");
+  window.scrollTo(0, 0);
+});
+</script>
+<script>
+function openStep3() {
+  document.getElementById("step2").classList.add("hidden");
+  document.getElementById("step3").classList.remove("hidden");
+  window.scrollTo(0, 0);
+}
+</script>
+</body></html>
